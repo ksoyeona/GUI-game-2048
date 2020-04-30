@@ -1,4 +1,4 @@
-// Soyeon Kim, cs8bwaha, 2/5/18
+// 2/5/18
 
 import java.util.*;
 import java.io.*;
