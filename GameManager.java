@@ -70,7 +70,7 @@ public class GameManager {
 		}//end of while loop
 
 	}
-	// TODO PSA3
+
 	// GameManager Constructor
 	// Generate new game
 	public GameManager(String outputBoard, int boardSize, Random random) throws IOException {
@@ -80,7 +80,6 @@ public class GameManager {
 		board.saveBoard(outputBoard);
 	}
 
-	// TODO PSA3
 	// GameManager Constructor
 	// Load a saved game
 	public GameManager(String inputBoard, String outputBoard, Random random) throws IOException {
@@ -91,7 +90,6 @@ public class GameManager {
 	}
 
 
-	// TODO PSA3
 	// Main play loop
 	// Takes in input from the user to specify moves to execute
 	// valid moves are:
