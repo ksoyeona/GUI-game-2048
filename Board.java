@@ -1,4 +1,4 @@
-// Soyeon Kim, cs8bwaha, 1/27/18
+//1/27/18
 
 /**
  * Sample Board
