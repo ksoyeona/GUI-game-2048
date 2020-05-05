@@ -12,7 +12,7 @@ import javafx.geometry.*;
 import java.util.*;
 
 import java.io.*;
-/*Soyeon Kim, cs8bwaha
+/*Soyeon Kim
  *2/22/18
  *
  *This file contains class Gui2048, an inner Key Handler class,
@@ -39,7 +39,7 @@ public class Gui2048 extends Application
     private Rectangle[][] recArr;//The rectangle array to save each Rectangle
     private Label name;//The label for title 2048
     private Color zeroColor = Color.rgb(0,0,0,0);//transparent color for zeros
-private Scene scene;
+    private Scene scene;
     @Override
         /**
          *This method adds a Gridpane, a Scene to a Stage and display the
@@ -120,19 +120,11 @@ private Scene scene;
                     recArr[i][j] = new Rectangle
                         (Constants2048.TILE_WIDTH, Constants2048.TILE_WIDTH, color);
 
-//recArr[i][j].heightProperty().bind(pane.prefHeightProperty());
-//recArr[i][j].widthProperty().bind(pane.prefWidthProperty());
-
                     //save rectangle in the tile object
                     tile.setRectangle(recArr[i][j]);
 
                     //save tile object in a tile array
                     tileArr[i][j] = tile;
-
-
-//tile.getRectangle().heightProperty().bind(pane.prefHeightProperty());
-//tile.getRectangle().widthProperty().bind(pane.prefWidthProperty());
-
 
                     //add rectangles on the pane
                     pane.add(tileArr[i][j].getRectangle(),j,i+1);
@@ -142,20 +134,12 @@ private Scene scene;
 
                     GridPane.setHalignment(tile.getText(), HPos.CENTER);
 
-
-//tile.getRectangle().heightProperty().divide(2).bind(pane.prefHeightProperty());
-//tile.getRectangle().widthProperty().divide(2).bind(pane.prefWidthProperty());
                 }
             }//end of for loop pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
 
 
  scene = new Scene(pane);
 
-//pane.prefHeightProperty().bind(recArr[i][j].getHeight());
-//pane.prefWidthProperty().bind(recArr[i][j].getWidth());
-
-//tile.getRectangle().widthProperty().bind(pane.prefWidthProperty());
-//tile.getRectangle().heightProperty().bind(pane.prefWidthProperty());
 pane.prefHeightProperty().bind(scene.heightProperty().divide(2));
 pane.prefWidthProperty().bind(scene.widthProperty().divide(2));
 
@@ -313,7 +297,7 @@ StackPane stack = new StackPane();
         //create new semi-transparent stackpane
         stack.setPrefHeight(scene.getHeight());
 stack.setPrefWidth(scene.getWidth());
-// stack.setPadding(new Insets(50,50,50,50));
+
 stack.setStyle("-fx-background-color: rgb(238, 228, 218,0.73)");
 
         Text txt = new Text();
@@ -326,7 +310,7 @@ stack.setStyle("-fx-background-color: rgb(238, 228, 218,0.73)");
 BorderPane border= new BorderPane();
 
 pane.add(stack,0,0,Integer.MAX_VALUE, Integer.MAX_VALUE);
-//stack.getChildren().add(pane);
+
       GridPane.setHalignment(txt, HPos.CENTER);
        GridPane.setValignment(txt, VPos.CENTER);
 
@@ -434,32 +418,19 @@ pane.add(stack,0,0,Integer.MAX_VALUE, Integer.MAX_VALUE);
                 //fill the tile color
                 recArr[i][j].setFill(color);
 
-
-
-
-
                 //store colored rectangle to the tile
                 tile.setRectangle(recArr[i][j]);
-
-
-
 
                 //update the tile
                 pane.add(tile.getRectangle(), j, i+1);
                 pane.add(tile.getText(),j,i+1);
                 GridPane.setHalignment(tile.getText(), HPos.CENTER);
 
-
-//pane.prefHeightProperty().bind(scene.heightProperty().divide(1));
-//pane.prefWidthProperty().bind(scene.widthProperty().divide(1));
-
             }
         }
 
     }
 
-
-    /** DO NOT EDIT BELOW */
 
     // The method used to process the command line arguments
     private void processArgs(String[] args)
