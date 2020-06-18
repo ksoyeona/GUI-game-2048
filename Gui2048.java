@@ -61,7 +61,6 @@ public class Gui2048 extends Application
             pane.setHgap(15); 
             pane.setVgap(15);
 
-            /** Add your Code for the GUI Here */
             primaryStage.setTitle("Gui2048");
             name = new Label("2048");
             name.setFont(Font.font("Times New Roman", FontWeight.BOLD, 30));
